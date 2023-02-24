@@ -6,11 +6,11 @@
 </head>
 <body>
     <form action="/member/join" method="post">
-        이메일 : <input type="text" name="memberEmail" placeholder="이메일" /><br>
-        비밀번호 : <input type="text" name="memberPassword" placeholder="비밀번호" /><br>
-        이름 : <input type="text" name="memberName" placeholder="이름" /><br>
-        나이 : <input type="text" name="memberAge" placeholder="나이" /><br>
-        전화번호 : <input type="text" name="memberMobile" placeholder="전화번호" /><br>
+        email : <input type="text" name="memberEmail" placeholder="email" /><br>
+        password : <input type="text" name="memberPassword" placeholder="password" /><br>
+        name : <input type="text" name="memberName" placeholder="name" /><br>
+        age : <input type="text" name="memberAge" placeholder="age" /><br>
+        mobile : <input type="text" name="memberMobile" placeholder="mobile" /><br>
         <input type="submit" value="회원가입" />
     </form>
 </body>

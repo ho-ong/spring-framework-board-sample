@@ -15,13 +15,21 @@
 
 ## 주요 기능(Main Function)
 - 회원(member)
-    - 로그인(login) : /member/login
-    - 로그아웃(logout) : /member/logout
-    - 회원가입(join) : /member/join
-    - 회원목록(list) : /member/list
-    - 회원정보 조회(detail) : /member/detail
-    - 회원정보 수정(update) : /member/update
-    - 회원정보 삭제(delete) : /member/delete
+  - 로그인(login) : /member/login
+  - 로그아웃(logout) : /member/logout
+  - 회원가입(join) : /member/join
+  - 회원목록(list) : /member/
+  - 회원정보 조회(detail) : /member/{id}
+  - 회원정보 수정(update) : /member/update
+  - 회원정보 삭제(delete) : /member/delete/{id}
+
+- 게시판(board)
+
+<br>
+
+## 추가 기능(Add Function)
+- 회원(member)
+  - ajax 이메일 중복체크 : /member/email-check
 
 - 게시판(board)
 

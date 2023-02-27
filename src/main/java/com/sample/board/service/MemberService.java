@@ -59,4 +59,15 @@ public class MemberService {
         memberRepository.delete(id);
     }
 
+    // 이메일 중복체크
+    public String emailCheck(String memberEmail) {
+        MemberDTO memberDTO = memberRepository.findByMemberEmail(memberEmail);
+
+        if(memberDTO == null) {
+            return "ok";
+        } else {
+            return "no";
+        }
+    }
+
 }

@@ -23,36 +23,32 @@
   - 회원정보 수정(update) : /member/update
   - 회원정보 삭제(delete) : /member/delete/{id}
 
-- 게시판(board)
-
 <br>
 
 ## 추가 기능(Add Function)
 - 회원(member)
   - ajax 이메일 중복체크 : /member/email-check
 
-- 게시판(board)
-
 <br>
 
-## MySQL DataBase Table
-```roomsql
-drop table if exists springframework_board.member;
+## MySQL DataBase 테이블
+```SQL
+drop table if exists member;
 
-create table springframework_board.member (
-    id bigint primary key auto_increment,
-    memberEmail varchar(20) unique,
+create table member (
+    id             bigint primary key auto_increment,
+    memberEmail    varchar(20) unique,
     memberPassword varchar(20),
-    memberName varchar(20),
-    memberAge int,
-    memberMobile varchar(30)
+    memberName     varchar(20),
+    memberAge      int,
+    memberMobile   varchar(30)
 );
 ```
 
 <br>
 
 ## MySQL DataBase 계정 생성 및 권한 부여
-```roomsql
+```SQL
 create database springframework_board;
 create hoong@localhost identified by '8888';
 grant all privileges on springframework_board.* to hoong@localhost;

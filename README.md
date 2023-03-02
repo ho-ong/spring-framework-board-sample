@@ -65,7 +65,7 @@ create table member (
 drop table if exists board;
 
 create table board (
-    id bigint        primary key auto_increment,
+    id               bigint primary key auto_increment,
     boardWriter      varchar(50),
     boardPass        varchar(20),
     boardTitle       varchar(50),

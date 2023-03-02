@@ -21,8 +21,7 @@
         const emailCheck = () => {
             const email = document.getElementById("memberEmail").value;
             const checkResult = document.getElementById("check-result");
-
-            console.log("입력한 이메일", email);
+            console.log("입력값 : ", email);
 
             $.ajax({
                 type: "post",
@@ -32,14 +31,15 @@
                 },
                 success: function(res) {
                     console.log("요청성공", res);
+
                     if(res == "ok") {
-                        console.log("사용가능한 이메일");
+                        console.log("이메일 사용가능");
                         checkResult.style.color = "green";
-                        checkResult.innerHTML = "사용가능한 이메일";
+                        checkResult.innerHTML = "이메일 사용가능";
                     } else {
-                        console.log("이미 사용중인 이메일");
+                        console.log("이메일 사용불가능");
                         checkResult.style.color = "red";
-                        checkResult.innerHTML = "이미 사용중인 이메일";
+                        checkResult.innerHTML = "이메일 사용불가능";
                     }
                 },
                 error: function(err) {

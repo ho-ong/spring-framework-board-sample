@@ -12,11 +12,11 @@
         name: <input type="text" name="memberName" value="${member.memberName}" readonly /><br>
         age: <input type="text" name="memberAge" value="${member.memberAge}" /><br>
         mobile: <input type="text" name="memberMobile" value="${member.memberMobile}" /><br>
-        <input type="button" value="수정" onclick="update()" />
+        <input type="button" value="수정" onclick="updateReq()" />
     </form>
 </body>
     <script>
-        const update = () => {
+        const updateReq = () => {
             const passwordDB = "${member.memberPassword}";
             const password = document.getElementById("memberPassword").value;
 

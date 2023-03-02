@@ -6,15 +6,15 @@
 </head>
 <body>
     <h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
-    <button onclick="update()">회원정보 수정</button>
-    <button onclick="logout()">로그아웃</button>
+    <button onclick="updateReq()">회원정보 수정</button>
+    <button onclick="logoutReq()">로그아웃</button>
 </body>
     <script>
-        const update = () => {
+        const updateReq = () => {
             location.href = "/member/update";
         }
 
-        const logout = () => {
+        const logoutReq = () => {
             location.href = "/member/logout";
         }
     </script>

@@ -40,7 +40,7 @@
 
 <br>
 
-## MySQL DataBase 계정 생성 및 권한 부여
+## MySQL Database 계정 생성 및 권한 부여
 ```SQL
 create database springframework_board;
 create hoong@localhost identified by '8888';
@@ -49,7 +49,7 @@ grant all privileges on springframework_board.* to hoong@localhost;
 
 <br>
 
-## MySQL DataBase 테이블
+## MySQL Database 테이블
 ```SQL
 drop table if exists member;
 

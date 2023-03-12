@@ -45,9 +45,9 @@ public class MemberService {
     }
 
     public boolean update(MemberDTO memberDTO) {
-        int result = memberRepository.update(memberDTO);
+        int updateResult = memberRepository.update(memberDTO);
 
-        if(result > 0) {
+        if(updateResult > 0) {
             return true;
         } else {
             return false;

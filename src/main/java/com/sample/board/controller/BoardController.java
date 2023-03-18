@@ -49,9 +49,11 @@ public class BoardController {
     public String findById(@RequestParam("id") Long id, @RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
         boardService.updateHits(id);
         BoardDTO boardDTO = boardService.findById(id);
+
         model.addAttribute("board", boardDTO);
         // 게시글 페이징
         model.addAttribute("page", page);
+
         return "/board/detail";
     }
 
@@ -81,6 +83,7 @@ public class BoardController {
     // 게시글 페이징
     @GetMapping("/paging")
     public String paging(@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
+        // 해당 페이지에서 보여줄 게시글 목록
         List<BoardDTO> pagingList = boardService.pagingList(page);
         PageDTO pageDTO = boardService.pagingParam(page);
         model.addAttribute("boardList", pagingList);

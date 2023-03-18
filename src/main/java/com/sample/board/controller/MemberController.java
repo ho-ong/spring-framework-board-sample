@@ -78,6 +78,7 @@ public class MemberController {
     // 회원정보 수정
     @GetMapping("/update")
     public String updateForm(HttpSession session, Model model) {
+        // 세션에 저장된 나의 이메일 가져오기
         String loginEmail = (String) session.getAttribute("loginEmail");
         MemberDTO memberDTO = memberService.findByMemberEmail(loginEmail);
         model.addAttribute("member", memberDTO);

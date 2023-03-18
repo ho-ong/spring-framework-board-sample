@@ -51,27 +51,28 @@ grant all privileges on springframework_board.* to hoong@localhost;
 
 ## MySQL Database 테이블
 ```SQL
+// 회원
 drop table if exists member;
 
 create table member (
-    id             bigint primary key auto_increment,
-    memberEmail    varchar(20) unique,
-    memberPassword varchar(20),
-    memberName     varchar(20),
-    memberAge      int,
-    memberMobile   varchar(30)
+    id             bigint not null primary key auto_increment,
+    memberEmail    varchar(20) unique null,
+    memberPassword varchar(20) null,
+    memberName     varchar(20) null,
+    memberAge      int         null,
+    memberMobile   varchar(30) null
 );
 
+// 게시판
 drop table if exists board;
 
 create table board (
-    id               bigint primary key auto_increment,
-    boardWriter      varchar(50),
-    boardPass        varchar(20),
-    boardTitle       varchar(50),
-    boardContents    varchar(500),
-    boardCreatedTime datetime default now(),
-    boardHits        int default 0,
-    fileAttached     int default 0
+    id               bigint not null primary key auto_increment,
+    boardWriter      varchar(50)  not null,
+    boardPass        varchar(20)  null,
+    boardTitle       varchar(50)  null,
+    boardContents    varchar(500) null,
+    boardHits        int          null,
+    boardCreatedTime datetime     null
 );
 ```

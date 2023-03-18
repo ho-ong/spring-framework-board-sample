@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2>${sessionScope.loginEmail} 님 환영합니다.</h2>
-    <button onclick="updateReq()">회원정보 수정</button>
+    <button onclick="updateReq()">정보수정</button>
     <button onclick="logoutReq()">로그아웃</button>
 </body>
     <script>

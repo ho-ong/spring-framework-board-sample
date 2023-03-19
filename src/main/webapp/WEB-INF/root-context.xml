@@ -12,15 +12,15 @@
     <!-- 데이터베이스 이름 및 계정 확인 -->
     <bean id="dataSource"
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/springframework_board?useSSL=false&amp;serverTimezone=Asia/Seoul" />
-        <property name="username" value="hoong"/>
-        <property name="password" value="8888"/>
+        <property name="username" value="hoong" />
+        <property name="password" value="8888" />
     </bean>
 
     <!-- 파일 생성 확인 -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
+        <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value ="classpath:/mybatis-config.xml" />
         <property name="mapperLocations" value="classpath:/mapper/*.xml" />
     </bean>
@@ -40,6 +40,6 @@
         <property name="maxUploadSize" value="10000000" />
     </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

@@ -72,7 +72,7 @@ create table board (
     boardPass        varchar(20)  null,
     boardTitle       varchar(50)  null,
     boardContents    varchar(500) null,
-    boardHits        int          null,
-    boardCreatedTime datetime     null
+    boardHits        int default 0 null,
+    boardCreatedTime datetime default now() null
 );
 ```

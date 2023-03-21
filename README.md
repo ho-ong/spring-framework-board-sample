@@ -68,11 +68,11 @@ drop table if exists board;
 
 create table board (
     id               bigint not null primary key auto_increment,
-    boardWriter      varchar(50)  not null,
-    boardPass        varchar(20)  null,
-    boardTitle       varchar(50)  null,
-    boardContents    varchar(500) null,
-    boardHits        int default 0 null,
+    boardWriter      varchar(50)            not null,
+    boardPass        varchar(20)            null,
+    boardTitle       varchar(50)            null,
+    boardContents    varchar(500)           null,
+    boardHits        int default 0          null,
     boardCreatedTime datetime default now() null
 );
 ```

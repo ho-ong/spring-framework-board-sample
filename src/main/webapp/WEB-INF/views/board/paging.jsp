@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!doctype html>
@@ -42,7 +43,7 @@
         <c:choose>
             <%-- 현재 페이지가 1페이지면 이전 글자만 표시 --%>
             <c:when test="${paging.page <= 1}">
-                <span>이전</span>
+                <a>이전</a>
             </c:when>
             <%-- 1페이지가 아닌 경우에는 이전을 클릭하면 현재 페이지보다 1 작은 페이지 요청 --%>
             <c:otherwise>
@@ -63,7 +64,7 @@
         </c:forEach>
         <c:choose>
             <c:when test="${paging.page >= paging.maxPage}">
-                <span>다음</span>
+                <a>다음</a>
             </c:when>
             <c:otherwise>
                 <a href="/board/paging?page=${paging.page + 1}">다음</a>

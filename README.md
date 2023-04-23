@@ -51,7 +51,7 @@ grant all privileges on springframework_board.* to hoong@localhost;
 
 ## MySQL Database 테이블
 ```SQL
-// 회원
+/* 회원 */
 drop table if exists member;
 
 create table member (
@@ -63,7 +63,7 @@ create table member (
     memberMobile   varchar(30) null
 );
 
-// 게시판
+/* 게시판 */
 drop table if exists board;
 
 create table board (

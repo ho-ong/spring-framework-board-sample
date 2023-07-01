@@ -20,7 +20,7 @@
     <form action="/member/join" method="post">
         email : <input type="text" name="memberEmail" placeholder="email" id="memberEmail" onblur="emailCheck()" /><br>
         <p id="check-result"></p>
-        password : <input type="text" name="memberPassword" placeholder="password" /><br>
+        password : <input type="password" name="memberPassword" placeholder="password" /><br>
         name : <input type="text" name="memberName" placeholder="name" /><br>
         age : <input type="text" name="memberAge" placeholder="age" /><br>
         mobile : <input type="text" name="memberMobile" placeholder="mobile" /><br>

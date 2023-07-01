@@ -28,9 +28,9 @@ public class BoardController {
         int result = boardService.write(boardDTO);
 
         if(result > 0) {
-            // return "redirect:/board/";
+            return "redirect:/board/";
             // 게시글 페이징
-            return "redirect:/board/paging";
+            // return "redirect:/board/paging";
         } else {
             return "/board/write";
         }

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!doctype html>
@@ -27,7 +28,8 @@
         </tr>
         <tr>
             <th>date</th>
-            <td>${board.boardCreatedTime}</td>
+            <!-- <td>${board.boardCreatedTime}</td> -->
+            <td><fmt:formatDate value="${board.boardCreatedTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
         </tr>
         <tr>
             <th>hits</th>

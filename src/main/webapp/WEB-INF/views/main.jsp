@@ -16,9 +16,11 @@
 </head>
 <body>
     <div class="container">
-        <h2><span>${sessionScope.loginEmail}</span>님 환영합니다.</h2>
-        <button onclick="updateReq()">정보수정</button>
-        <button onclick="logoutReq()">로그아웃</button>
+        <h2>안녕하세요! <span>${sessionScope.loginEmail}</span>님</h2>
+        <div class="btn-index">
+            <button onclick="updateReq()" class="btn-first">정보수정</button>
+            <button onclick="logoutReq()">로그아웃</button>
+        </div>
     </div>
 </body>
     <script>

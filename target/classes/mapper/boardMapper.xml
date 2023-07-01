@@ -5,8 +5,8 @@
 <mapper namespace="Board">
     <!-- 게시글 작성 -->
     <insert id="write" parameterType="board">
-        insert into board (boardWriter, boardPass, boardTitle, boardContents)
-        values (#{boardWriter}, #{boardPass}, #{boardTitle}, #{boardContents})
+        insert into board (boardWriter, boardPassword, boardTitle, boardContents)
+        values (#{boardWriter}, #{boardPassword}, #{boardTitle}, #{boardContents})
     </insert>
 
     <!-- 게시글 목록 -->

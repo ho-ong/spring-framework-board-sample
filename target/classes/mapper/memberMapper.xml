@@ -30,7 +30,7 @@
     </select>
 
     <update id="update" parameterType="member">
-        update member set memberAge = #{memberAge}, memberMobile = #{memberMobile}
+        update member set memberName = #{memberName}, memberName = #{memberName}, memberAge = #{memberAge}, memberMobile = #{memberMobile}
         where id = #{id}
     </update>
 

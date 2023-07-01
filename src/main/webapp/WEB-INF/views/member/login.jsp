@@ -17,7 +17,7 @@
 <body>
     <form action="/member/login" method="post">
         email : <input type="text" name="memberEmail" placeholder="email" /><br>
-        password : <input type="text" name="memberPassword" placeholder="password" /><br>
+        password : <input type="password" name="memberPassword" placeholder="password" /><br>
         <input type="submit" value="로그인" />
     </form>
 </body>

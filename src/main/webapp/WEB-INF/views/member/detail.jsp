@@ -42,5 +42,11 @@
             <td>${member.memberMobile}</td>
         </tr>
     </table>
+    <button onclick="listReq()">목록</button>
 </body>
+    <script th:inline="javascript">
+        const listReq = () => {
+            location.href = "/member/";
+        }
+    </script>
 </html>

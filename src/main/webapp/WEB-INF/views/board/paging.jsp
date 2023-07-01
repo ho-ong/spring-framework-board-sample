@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <!doctype html>
@@ -15,28 +16,28 @@
     <link rel="stylesheet" href="${path}/resources/css/style.css">
 </head>
 <body>
-    <div>
-        <table>
+    <h2>List(Paging)</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>writer</th>
+            <th>date</th>
+            <th>hits</th>
+        </tr>
+        <c:forEach items="${boardList}" var="board">
             <tr>
-                <th>id</th>
-                <th>title</th>
-                <th>writer</th>
-                <th>date</th>
-                <th>hits</th>
+                <td>${board.id}</td>
+                <td>
+                    <a href="/board?id=${board.id}&page=${paging.page}">${board.boardTitle}</a>
+                </td>
+                <td>${board.boardWriter}</td>
+                <!-- <td>${board.boardCreatedTime}</td> -->
+                <td><fmt:formatDate value="${board.boardCreatedTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                <td>${board.boardHits}</td>
             </tr>
-            <c:forEach items="${boardList}" var="board">
-                <tr>
-                    <td>${board.id}</td>
-                    <td>
-                        <a href="/board?id=${board.id}&page=${paging.page}">${board.boardTitle}</a>
-                    </td>
-                    <td>${board.boardWriter}</td>
-                    <td>${board.boardCreatedTime}</td>
-                    <td>${board.boardHits}</td>
-                </tr>
-            </c:forEach>
-        </table>
-    </div>
+        </c:forEach>
+    </table>
 
     <!-- 게시글 페이징 -->
     <div class="board-paging">
@@ -50,12 +51,11 @@
                 <a href="/board/paging?page=${paging.page - 1}">이전</a>
             </c:otherwise>
         </c:choose>
-        <%-- for(int i = startPage; i <= endPage; i++) --%>
         <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i" step="1">
             <c:choose>
                 <%-- 요청한 페이지에 있는 경우 현재 페이지 번호는 텍스트만 표시 --%>
                 <c:when test="${i eq paging.page}">
-                    <span>${i}</span>
+                    <span class="current-page">${i}</span>
                 </c:when>
                 <c:otherwise>
                     <a href="/board/paging?page=${i}">${i}</a>
@@ -71,5 +71,12 @@
             </c:otherwise>
         </c:choose>
     </div>
+
+    <button onclick="writeReq()" class="btn-board-paging">게시글 작성</button>
 </body>
+    <script>
+        const writeReq = () => {
+            location.href = "/board/write";
+        }
+    </script>
 </html>

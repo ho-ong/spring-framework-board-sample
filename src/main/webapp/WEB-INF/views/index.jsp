@@ -17,14 +17,29 @@
 <body>
     <h1>Index</h1>
     <div class="container">
-        <!-- Member -->
-        <a href="/member/join">회원가입</a>
+        <!-- member -->
         <a href="/member/login">로그인</a>
+        <a href="/member/join">회원가입</a>
         <a href="/member/">회원목록</a>
-        <!-- Board -->
-        <a href="/board/write">게시글 작성</a>
-        <a href="/board/">게시글 목록</a>
-        <a href="/board/paging">게시글 페이징 목록</a>
+        <!-- board -->
+        <div class="btn-index">
+            <button onclick="writeReq()" class="btn-first">게시글 작성</button>
+            <button onclick="listReq()">게시글 목록</button>
+            <button onclick="pagingReq()">게시글 목록(페이징)</button>
+        </div>
     </div>
 </body>
+    <script>
+        const writeReq = () => {
+            location.href = "/board/write";
+        }
+
+        const listReq = () => {
+            location.href = "/board/";
+        }
+
+        const pagingReq = () => {
+            location.href = "/board/paging";
+        }
+    </script>
 </html>
